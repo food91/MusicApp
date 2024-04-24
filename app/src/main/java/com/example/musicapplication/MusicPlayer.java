@@ -1,6 +1,7 @@
 package com.example.musicapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,12 +36,13 @@ public class MusicPlayer extends AppCompatActivity {
 
     private String[] string_arr={"义勇军进行曲（合唱）- 中国人民解放军军乐团","喜欢你 - 邓紫棋","Wish You Hell - Wendy"};
     private String[] string_picture={String.valueOf(R.drawable.mc1), String.valueOf(R.drawable.mc2), String.valueOf(R.drawable.mc3)};
+    private ConstraintLayout cl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_player);
-
+        cl= findViewById(R.id.cl_main);
         tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
         sp1 = findViewById(R.id.sp1);
@@ -47,20 +50,34 @@ public class MusicPlayer extends AppCompatActivity {
         btn_bf = findViewById(R.id.btn_bf);
         btn_zt = findViewById(R.id.btn_zt);
 
-        sp1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        String[] items = {"1", "2 ", " 3"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp1.setAdapter(adapter);
+
+        sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (getResources().getStringArray(R.array.bg_arr)[position] == "bg1") {
-                    view.setBackgroundResource(R.drawable.bg1);
-                }
-                if (getResources().getStringArray(R.array.bg_arr)[position] == "bg2") {
-                    view.setBackgroundResource(R.drawable.bg3);
-                }
-                if (getResources().getStringArray(R.array.bg_arr)[position] == "bg3"){
-                    view.setBackgroundResource(R.drawable.bg2);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        cl.setBackgroundResource(R.drawable.bg1);
+                        break;
+                    case 1:
+                        cl.setBackgroundResource(R.drawable.bg2);
+                        break;
+                    case 2:
+                        cl.setBackgroundResource(R.drawable.bg3);
+                        break;
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // 处理没有项被选中的情况（如果需要）
+            }
         });
+
 
         lv1.setAdapter(new MyAdapter(getApplicationContext()));
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
