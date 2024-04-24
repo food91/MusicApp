@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MusicPlayer"
+    android:background="@drawable/bg1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/music"
+        android:id="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="40dp"
+        android:gravity="left|center"
+        android:background="#57A9CA"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/white"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp1"
+        app:layout_constraintBottom_toBottomOf="@+id/tv1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:entries="@array/bg_arr"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        android:id="@+id/lv1"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/tv2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/zzbf"
+        android:background="#57A9CA"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="left|center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/btn_zt"
+        android:id="@+id/btn_bf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        android:text="@string/bf"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/btn_zt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        android:text="@string/bf"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">音乐</string>
+    <string name="yhdl">用户登录</string>
+    <string name="yhm">用户名：</string>
+    <string name="mm">密码:</string>
+    <string name="sr_yhm">请输入你的用户名...</string>
+    <string name="sr_mm">请输入你的密码...</string>
+    <string name="xsmm">显示密码</string>
+    <string name="jzmm">记住密码</string>
+    <string name="dl">登录</string>
+    <string name="tc">退出</string>
+    <string name="cg">登录成功</string>
+    <string name="sb">登录失败</string>
+    <string name="music"> 音乐</string>
+    <string name="music2">的音乐</string>
+    <string name="zzbf">正在播放:</string>
+    <string name="bf">播放</string>
+    <string name="zt">暂停</string>
+    <string name="bfsb">播放失败</string>
+
+    <string-array name="bg_arr">
+        <item>背景1</item>
+        <item>背景2</item>
+        <item>背景3</item>
+    </string-array>
+</resources>

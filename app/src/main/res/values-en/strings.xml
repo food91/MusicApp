@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Music Application</string>
+    <string name="yhdl">Login</string>
+    <string name="yhm">Username:</string>
+    <string name="mm">Password:</string>
+    <string name="sr_yhm">Please input your name...</string>
+    <string name="sr_mm">Please input your password...</string>
+    <string name="xsmm">Show</string>
+    <string name="jzmm">Remember</string>
+    <string name="dl">Login</string>
+    <string name="tc">Exit</string>
+    <string name="cg">Successfully</string>
+    <string name="sb">Login failed</string>
+    <string name="music"> Music</string>
+    <string name="music2">\'s  Music</string>
+    <string name="zzbf">Playing:</string>
+    <string name="bf">play</string>
+    <string name="zt">pause</string>
+    <string name="bfsb">failed</string>
+
+    <string-array name="bg_arr">
+        <item>bg1</item>
+        <item>bg2</item>
+        <item>bg3</item>
+    </string-array>
+</resources>
